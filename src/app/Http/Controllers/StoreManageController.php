@@ -102,7 +102,7 @@ class StoreManageController extends Controller
 
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'file' => ['required', 'file'],
+            'file' => ['required', 'file', 'max:1600'],
             'area' => ['required', 'numeric', 'min:1', 'max:3'],
             'genre' => ['required', 'numeric', 'min:1', 'max:5'],
             'detail' => ['required', 'string',],
@@ -131,8 +131,11 @@ class StoreManageController extends Controller
             return view('notfound');
         };
 
+        $dir = 'img/stores-img/';
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'file' => ['file', 'max:1600'],
             'area' => ['required', 'numeric', 'min:1', 'max:3'],
             'genre' => ['required', 'numeric', 'min:1', 'max:5'],
             'detail' => ['required', 'string',],
@@ -149,6 +152,10 @@ class StoreManageController extends Controller
         $store->detail = $request->detail;
 
         $store->update();
+
+        if( $request->file ){
+            $request->file('file')->storeAs('public/' . $dir, $store->image_url);
+        };
 
         return redirect()->route('editdone');
     }
