@@ -102,21 +102,25 @@ class StoreManageController extends Controller
 
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'file' => ['required', 'file'],
             'area' => ['required', 'numeric', 'min:1', 'max:3'],
             'genre' => ['required', 'numeric', 'min:1', 'max:5'],
             'detail' => ['required', 'string',],
         ]);
 
         $store = new Store();
+        $dir = 'img/stores-img/';
 
         $store->name = $request->name;
         $store->user_id = $user->id;
         $store->area_id = $request->area;
         $store->genre_id = $request->genre;
         $store->detail = $request->detail;
-        $store->image_url = 'sushi.jpg';
+        $store->image_url = Store::max('id')+1 .'.png';
 
         $store->save();
+
+        $request->file('file')->storeAs('public/' . $dir, $store->image_url);
 
         return redirect()->route('editdone');
     }

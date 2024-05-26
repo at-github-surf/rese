@@ -154,11 +154,16 @@
                             <li>
                                 <div class="storeedit__form-list-item">
                                     <div class="storeedit__form-list-item--label">
-                                        <label for="name">
+                                        <label for="file">
                                             <span>画像ファイル</span>
                                         </labe>
                                     </div>
-                                    <input class="storeedit__form-list-item--file" type="file" name="image">
+                                    <div>
+                                    <input class="storeedit__form-list-item--file" type="file" name="file" id="file" accept = "image/png" />
+                                    @error('file')
+                                        <br><strong class="form__error">{{ $message }}</strong>
+                                    @enderror
+                                    </div>
                                 </div>
                             </li>
                             <li>
@@ -216,7 +221,7 @@
             <div class="storeedit">
                 <div class="storeedit__title">店舗情報登録</div>
                 <div class="storeedit__form-wrap">
-                    <form method="post" action="/storemanage">
+                    <form method="post" action="/storemanage" enctype="multipart/form-data">
                         @csrf
                         <ul class="storeedit__form-list">
                             <li>
@@ -239,11 +244,16 @@
                             <li>
                                 <div class="storeedit__form-list-item">
                                     <div class="storeedit__form-list-item--label">
-                                        <label for="name">
+                                        <label for="file">
                                             <span>画像ファイル</span>
                                         </labe>
                                     </div>
-                                    <input class="storeedit__form-list-item--file" type="file" name="image">
+                                    <div>
+                                    <input class="storeedit__form-list-item--file" type="file" name="file" id="file" accept = "image/png" />
+                                    @error('file')
+                                        <br><strong class="form__error">{{ $message }}</strong>
+                                    @enderror
+                                    </div>
                                 </div>
                             </li>
                             <li>

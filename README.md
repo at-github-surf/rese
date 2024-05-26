@@ -68,4 +68,5 @@ php artisan db:seed
   
 ##その他  
 画像のパスに環境変数を使用。本番環境時にURLを書き換える  
-IMG_PATH="http://localhost/img/stores-img/"
+IMG_PATH="http://localhost/storage/img/stores-img/"
+/src/storage/app/public/img/stores-img/内にテスト用の店舗画像をpngで格納してください。
