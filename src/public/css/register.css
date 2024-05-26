@@ -1,0 +1,204 @@
+/* ハンバーガーメニュー用 */
+#menu-btn-check {
+    display: none;
+}
+
+.hamburger {
+    width: 36px;
+    height: 36px;
+    position: relative;
+    margin-top: -8px;
+    margin-right: 14px;
+    border: 0px;
+    border-radius: 4px;
+    z-index: 100;
+
+}
+
+.hamburger__button {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-radius: 4px;
+    background-color: #305dff;
+    box-shadow: 3px 3px 3px #999;
+}
+
+.hamburger__button span,
+.hamburger__button span:before,
+.hamburger__button span:after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    position: relative;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.hamburger__button span:before {
+    bottom: 8px;
+    width: 10px;
+}
+
+.hamburger__button span:after {
+    top: 8px;
+    width: 5px;
+}
+
+#menu-btn-check:checked~.hamburger__button span {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-btn-check:checked~.hamburger__button span:before {
+    bottom: 0;
+    width: 24px;
+    transform: translateX(-2px) rotate(45deg);
+}
+
+#menu-btn-check:checked~.hamburger__button span:after {
+    top: 0;
+    width: 24px;
+    transform: translateX(-2px)rotate(-45deg);
+}
+
+.hamburger__menu {
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 100%;
+    z-index: 15;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.hamburger__list {
+    list-style: none;
+}
+
+.hamburger__item {
+    text-decoration: none;
+    font-size: 32px;
+}
+
+.hamburger__item a {
+    color: #305dff;
+    text-decoration: none;
+}
+
+#menu-btn-check:checked~.hamburger__menu {
+    left: 0;
+}
+
+
+/* 登録 */
+.dialog__wrapper {
+    margin-top: 80px;
+    width: 400px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+}
+
+.dialog__outer {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px #999;
+}
+
+.dialog__title {
+    margin: 0px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #305dff;
+    color: #fff;
+    border-radius: 6px 6px 0 0;
+    height: 46px;
+}
+
+.form {
+    margin: 32px;
+    margin-top: 8px;
+    padding: 0px;
+}
+
+.form__items {
+    margin-top: 0px;
+    padding-left: 16px;
+    list-style: none;
+}
+
+.form__input {
+    display: inline-block;
+    margin-top: 14px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #999;
+    font-size: 12px;
+}
+
+.form__submit {
+    text-align: right;
+    padding-bottom: 20px;
+}
+
+.form__btn-submit {
+    background-color: #305dff;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 6px;
+    width: 100px;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+}
+
+.form__error {
+    font-size: 12px;
+    color: #c00;
+}
+
+
+
+.dialog__message {
+    display: inline-block;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    margin-top: 90px;
+}
+
+.dialog__login {
+    background-color: #305dff;
+    width: 120px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+}
+
+.dialog__login-label {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+@media screen and (max-width:768px) {
+    .dialog__wrapper {
+        width: 100%;
+        margin-top: 80px;
+    }
+}

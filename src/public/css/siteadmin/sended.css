@@ -1,0 +1,167 @@
+/* ハンバーガーメニュー用 */
+#menu-btn-check {
+    display: none;
+}
+
+.hamburger {
+    width: 36px;
+    height: 36px;
+    position: relative;
+    margin-top: -8px;
+    margin-right: 14px;
+    border: 0px;
+    border-radius: 4px;
+    z-index: 100;
+
+}
+
+.hamburger__button {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-radius: 4px;
+    background-color: #305dff;
+    box-shadow: 3px 3px 3px #999;
+}
+
+.hamburger__button span,
+.hamburger__button span:before,
+.hamburger__button span:after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    position: relative;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.hamburger__button span:before {
+    bottom: 8px;
+    width: 10px;
+}
+
+.hamburger__button span:after {
+    top: 8px;
+    width: 5px;
+}
+
+#menu-btn-check:checked~.hamburger__button span {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-btn-check:checked~.hamburger__button span:before {
+    bottom: 0;
+    width: 24px;
+    transform: translateX(-2px) rotate(45deg);
+}
+
+#menu-btn-check:checked~.hamburger__button span:after {
+    top: 0;
+    width: 24px;
+    transform: translateX(-2px)rotate(-45deg);
+}
+
+.hamburger__menu {
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 100%;
+    z-index: 15;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.hamburger__list {
+    list-style: none;
+}
+
+.hamburger__item {
+    text-decoration: none;
+    font-size: 32px;
+}
+
+.hamburger__item a {
+    color: #305dff;
+    text-decoration: none;
+}
+
+.hamburger__logout-btn {
+    background-color: unset;
+    border-style: none;
+    font-size: 32px;
+    color: #305dff;
+    cursor: pointer;
+}
+
+#menu-btn-check:checked~.hamburger__menu {
+    left: 0;
+}
+
+
+/* サンクスボディ */
+.dialog__wrapper {
+    margin-top: 80px;
+    width: 500px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.dialog__outer {
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px #999;
+}
+
+.dialog__inner {
+    text-align: center;
+}
+
+.dialog__message {
+    display: inline-block;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    margin-top: 90px;
+}
+
+.dialog__return {
+    background-color: #305dff;
+    width: 120px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    padding-top: 1px;
+    padding-bottom: 2px;
+}
+
+.dialog__return-label {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width:768px) {
+    .dialog__wrapper {
+        width: 100%;
+
+    }
+}

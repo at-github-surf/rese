@@ -1,0 +1,455 @@
+/* ハンバーガーメニュー用 */
+#menu-btn-check {
+    display: none;
+}
+
+.hamburger {
+    width: 36px;
+    height: 36px;
+    position: relative;
+    margin-top: -8px;
+    margin-right: 14px;
+    border: 0px;
+    border-radius: 4px;
+    z-index: 100;
+
+}
+
+.hamburger__button {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-radius: 4px;
+    background-color: #305dff;
+    box-shadow: 3px 3px 3px #999;
+}
+
+.hamburger__button span,
+.hamburger__button span:before,
+.hamburger__button span:after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    position: relative;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.hamburger__button span:before {
+    bottom: 8px;
+    width: 10px;
+}
+
+.hamburger__button span:after {
+    top: 8px;
+    width: 5px;
+}
+
+#menu-btn-check:checked~.hamburger__button span {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-btn-check:checked~.hamburger__button span:before {
+    bottom: 0;
+    width: 24px;
+    transform: translateX(-2px) rotate(45deg);
+}
+
+#menu-btn-check:checked~.hamburger__button span:after {
+    top: 0;
+    width: 24px;
+    transform: translateX(-2px)rotate(-45deg);
+}
+
+.hamburger__menu {
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 100%;
+    z-index: 15;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.hamburger__list {
+    list-style: none;
+}
+
+.hamburger__item {
+    text-decoration: none;
+    font-size: 32px;
+}
+
+.hamburger__item a {
+    color: #305dff;
+    text-decoration: none;
+}
+
+.hamburger__logout-btn {
+    background-color: unset;
+    border-style: none;
+    font-size: 32px;
+    color: #305dff;
+    cursor: pointer;
+}
+
+#menu-btn-check:checked~.hamburger__menu {
+    left: 0;
+}
+
+/* 予約状況 */
+.maypage__wrapper {
+    display: flex;
+    max-width: 1030px;
+    margin-top: 80px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.reserved__wrapper {
+    width: 35%;
+    margin-right: 60px;
+    margin-bottom: 24px;
+}
+
+.reserved__title {
+    padding: 0px;
+    margin: 0px;
+}
+
+.reserved__wrapper:last-child {
+    margin-bottom: 32px;
+}
+
+.reserved__store {
+    background-color: #305dff;
+    box-shadow: 3px 3px 3px #999;
+    border-radius: 6px;
+    margin-top: 16px;
+    padding: 6px;
+}
+
+.reserved__store-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.reserved__store-title {
+    color: #fff;
+    font-size: 14px;
+    margin: 0px;
+}
+
+.reserved__store-close-circle {
+    height: 17px;
+    width: 17px;
+    border: solid 2px;
+    border-color: #fff;
+    border-radius: 50%;
+    line-height: 17px;
+    text-align: center;
+    align-content: center;
+}
+
+.reserved__store-close {
+    font-size: 14px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.reserved__store-item-list {
+    list-style: none;
+    color: #fff;
+    font-size: 12px;
+    padding-left: 0px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.reserved__store-item-name {
+    display: inline-block;
+    width: 25%;
+    padding-top: 8px;
+}
+
+/* 予約中 */
+.storereserved {
+    margin-top: 16px;
+    background-color: #305dff;
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px #999;
+}
+
+.storereserved-p {
+    margin-top: 16px;
+    background-color: #bbb;
+    border-radius: 6px;
+    padding-bottom: 1px;
+}
+
+.storereserved__title {
+    padding-top: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.storereserved__conf {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 0px;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.storereserved__conf-lists-wrap {
+    width: 200px;
+}
+
+.storereserved__conf-lists {
+    list-style: none;
+    margin: 16px;
+    margin-top: 0px;
+    padding-left: 0;
+    padding-top: 8px;
+}
+
+.storereserve__conf-item-name {
+    display: inline-block;
+    width: 60px;
+}
+
+.storereserved__QR-wrap {
+    margin: 0 0 0 auto;
+    background-color: #fff;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.storereserved__func {
+    display: flex;
+    width: 100%;
+}
+
+.storereserved__edit {
+    margin-top: 6px;
+    height: 36px;
+    width: 50%;
+    background-color: #1c41c5;
+    border-radius: 0px 0px 0px 6px;
+    border-right: solid 3px #305dff;
+}
+
+.storereserved__edit-btn {
+    color: #fff;
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding-top: 8px;
+}
+
+.storereserved__cnacel {
+    margin-top: 6px;
+    height: 36px;
+    width: 50%;
+    background-color: #1c41c5;
+    border-radius: 0px 0px 6px 0px;
+}
+
+.storereserved__cnacel-btn {
+    color: #fff;
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding-top: 8px;
+}
+
+/* 店舗カード */
+.myname {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.favorite-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.storeindex__wrapper {
+    position: relation;
+    width: 65%;
+}
+
+.storecards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.storecards--col4 {
+    margin-bottom: -26px;
+}
+
+.storecards--col4>.storecards__item {
+    width: 48%;
+    margin-right: 4%;
+    margin-bottom: 26px;
+}
+
+.storecards--col4>.storecards__item:nth-of-type(2n) {
+    margin-right: 0px;
+}
+
+.storecard {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px #999;
+}
+
+.storecard__img-wrapper {
+    position: relative;
+    margin: 0px;
+    border-radius: 6px 6px 0px 0px;
+    padding-top: 56.25%;
+    overflow: hidden;
+}
+
+.storecard__img {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.storecard__body {
+    padding: 15px;
+}
+
+.storecard__body>*:last-child {
+    margin-bottom: 0px;
+}
+
+.storecard__name {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.storecard__tag {
+    color: #999;
+    font-size: 10px;
+}
+
+.storecard__stars {
+    text-align: right;
+    font-size: 15px;
+    letter-spacing: -3px;
+}
+
+.storecard__func {
+    display: flex;
+    justify-content: space-between;
+}
+
+.storecard__btn-detail {
+    background-color: #305dff;
+    border-radius: 6px;
+    width: 100px;
+    height: 28px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.storecard__btn-label {
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.storecard__favo-on {
+    color: #f00;
+    font-size: 28px;
+    margin: 0px;
+}
+
+.storecard__favo-off {
+    color: #ccc;
+    font-size: 28px;
+    margin: 0px;
+}
+
+.storecard__favo-link {
+    text-decoration: none;
+}
+
+
+@media screen and (max-width:768px) {
+
+    .maypage__wrapper {
+        display: block;
+        width: 100%;
+    }
+
+    .reserved__wrapper {
+        width: 100%;
+    }
+
+    .storeindex__wrapper {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .myname {
+        margin-top: 60px;
+    }
+
+    .storecards--col4 {
+        margin-bottom: -20px;
+    }
+
+    .storecards--col4:first-child {
+        margin-top: 20px;
+    }
+
+    .storecards .storecards__item {
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+}

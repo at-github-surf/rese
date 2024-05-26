@@ -1,64 +1,71 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+#アプリケーション名
+Rese
+ある企業のグループ会社の飲食店予約サービス
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+##作成した目的
+競合他社の機能や画面が複雑で使いづらいため、
+差別化のためユーザーフレンドリーな予約サービスの提供を目指す
 
-## About Laravel
+##アプリケーションURL
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+##リポジトリ
+https://github.com/at-github-surf/rese
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+##機能一覧
+会員登録
+ログイン
+ログアウト
+ユーザー情報取得
+ユーザー飲食店お気に入り一覧取得
+ユーザー飲食店予約情報取得
+飲食店一覧取得
+飲食店詳細取得
+飲食店お気に入り追加
+飲食店お気に入り解除
+飲食店予約
+飲食店予約キャンセル
+飲食店評価
+エリアで検索する
+ジャンルで検索する
+店名で検索する
 
-## Learning Laravel
+店舗代表者追加
+店舗代表一覧取得
+利用者向けお知らせメール一斉配信
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+自店舗取得
+自店舗登録
+自店舗編集
+自店舗予約情報取得
+自店舗来店確認
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+##使用技術
+laravel 8.83.8
+nginx1.21.1
+php8.1
+mysql8.0.26
+milon/barcode（composer require milon/barcode）
 
-## Laravel Sponsors
+##テーブル設計
+https://github.com/at-github-surf/rese/blob/main/src/rese_table1.png
+https://github.com/at-github-surf/rese/blob/main/src/rese_table2.png
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+##ER図
+https://github.com/at-github-surf/rese/blob/main/src/rese_er.png
 
-### Premium Partners
+#環境構築
+git clone https://github.com/at-github-surf/rese.git
+docker-compose up -d --build
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+コンテンツディレクトリに移動
+composer update
+composer install
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+##その他
+画像のパスに環境変数を使用。本番環境時にURLを書き換える
+IMG_PATH="http://localhost/img/stores-img/"
